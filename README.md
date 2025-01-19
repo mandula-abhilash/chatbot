@@ -16,7 +16,7 @@ VISDAK Chatbot is a powerful AI-driven solution that enables businesses to manag
 
 ## Tech Stack
 
-- **Backend:** Flask (Python)
+- **Backend:** FastAPI (Python)
 
 - **Database:** PostgreSQL with pgvector
 
@@ -30,7 +30,7 @@ VISDAK Chatbot is a powerful AI-driven solution that enables businesses to manag
 
 ```
 visdak-chatbot/
-├── app.py                   # Main Flask application entry point
+├── main.py                   # Main FastAPI application entry point
 ├── config.py                # Configuration settings
 ├── requirements.txt         # Dependencies
 ├── .env                     # Environment variables
@@ -56,17 +56,17 @@ visdak-chatbot/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourrepo/visdak-chatbot.git
+   git clone https://github.com/mandula-abhilash/chatbot.git
 
-   cd visdak-chatbot
+   cd chatbot
    ```
 
 2. Create and activate a virtual environment:
 
    ```bash
-   python3 -m venv venv
+   python -m venv venv
 
-   source venv/bin/activate  # On Windows use  `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows use  `\.\venv\Scripts\Activate`
    ```
 
 3. Install dependencies:
@@ -83,16 +83,16 @@ visdak-chatbot/
    PG_PASSWORD=your_postgres_password
    PG_DATABASE=your_postgres_db
    OPENAI_API_KEY=your_openai_api_key
-   FLASK_SECRET_KEY=your_flask_secret_key
+   FASTAPI_SECRET_KEY=your_fastapi_secret_key
    ```
 
 ## Running the Application
 
-1. Start the Flask server:
+1. Start the FastAPI server:
    ```bash
-   python app.py
+   uvicorn main:app --host 0.0.0.0 --port 8000
    ```
-2. The server will run on `http://localhost:5000`
+2. The server will run on `http://localhost:8000`
 
 ## API Endpoints
 
@@ -109,5 +109,5 @@ visdak-chatbot/
    ```
 3. Run the application in production using Gunicorn:
    ```bash
-   gunicorn --bind 0.0.0.0:5000 app:app
+   gunicorn --bind 0.0.0.0:8000 main:app -k uvicorn.workers.UvicornWorker
    ```
