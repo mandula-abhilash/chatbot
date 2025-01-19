@@ -90,7 +90,7 @@ visdak-chatbot/
 
 1. Start the FastAPI server:
    ```bash
-   uvicorn main:app --host 0.0.0.0 --port 8000
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 2. The server will run on `http://localhost:8000`
 

@@ -9,3 +9,5 @@ openai
 pgvector
 requests
 pydantic
+pytest
+httpx
