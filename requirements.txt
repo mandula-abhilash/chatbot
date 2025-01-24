@@ -11,3 +11,4 @@ requests
 pydantic
 pytest
 httpx
+langchain-community

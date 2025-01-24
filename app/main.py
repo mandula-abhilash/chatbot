@@ -5,7 +5,7 @@ from app.utils.logger import logger
 from app.routes.chatbot import chatbot_router
 from app.routes.webhooks import webhooks_router
 from app.routes.users import users_router
-from app.models.database import init_db  # Import database initialization
+from app.models.database import init_db  
 
 # Load environment variables
 load_dotenv()
